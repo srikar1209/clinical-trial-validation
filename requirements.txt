@@ -1,0 +1,7 @@
+pandas
+numpy
+langgraph
+mcp
+streamlit
+plotly
+# optional: kafka-python   (only if you run a Kafka server and set KAFKA_BOOTSTRAP)
