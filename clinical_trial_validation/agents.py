@@ -14,7 +14,7 @@ predictable and explainable. Only Agent 4 uses an LLM, and only to WRITE the sum
 """
 import pandas as pd
 
-from .config import Z_THRESHOLD, ZSCORE_COLUMNS
+from clinical_trial_validation.config import Z_THRESHOLD, ZSCORE_COLUMNS
 
 BATCH = 500   # records per tool call (5,000 records = 10 calls per agent)
 
@@ -125,7 +125,7 @@ def report(df, audit, use_llm=True):
     text = None
     if use_llm:
         try:
-            from .llm import ask_llm, ollama_up
+            from clinical_trial_validation.llm import ask_llm, ollama_up
             if ollama_up():
                 text = ask_llm("You write short, factual data review summaries for a clinical trial team. "
                                "Use ONLY the numbers given. 5 bullet points. Plain English. "

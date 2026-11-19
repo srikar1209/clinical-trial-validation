@@ -10,12 +10,12 @@ need only 10 calls per tool instead of 5,000 (much faster over stdio).
 It talks over stdio (standard input/output): the client starts this file as a small
 background process and sends messages through its input/output. Nothing goes over the network.
 
-Run by itself (to test):   python -m trial_validation.mcp_server      (it waits for a client; Ctrl+C to stop)
-Normally it is started automatically by:  python -m trial_validation.pipeline.step2_pipeline --mcp
+Run by itself (to test):   python -m clinical_trial_validation.mcp_server      (it waits for a client; Ctrl+C to stop)
+Normally it is started automatically by:  python -m clinical_trial_validation.pipeline --mcp
 """
 from mcp.server.mcpserver import MCPServer
 
-from . import checks
+from clinical_trial_validation import checks
 
 server = MCPServer(name="trial-checks",
                    instructions="Deterministic data checks for clinical trial records. No AI inside.")

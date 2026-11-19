@@ -9,6 +9,8 @@ ROOT = Path(__file__).resolve().parent.parent   # repository root
 DATA = ROOT / "data"
 RECORDS_CSV = DATA / "trial_records.csv"
 DB = ROOT / "trial.db"            # results + audit log live here
+REPORTS = ROOT / "reports"        # markdown reports written by pipeline.py and submit.py
+IMAGES = ROOT / "images"          # figures written by figures.py
 
 RULE_VERSION = "v1.0"             # saved with every decision, so you know which rules made it
 

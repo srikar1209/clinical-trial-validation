@@ -11,7 +11,7 @@ import sys
 from contextlib import AsyncExitStack
 from pathlib import Path
 
-from . import checks
+from clinical_trial_validation import checks
 
 
 class LocalTools:
@@ -41,7 +41,7 @@ class MCPTools:
         from mcp.client.stdio import StdioServerParameters, stdio_client
         # run the server as a module from the repo root so its package imports resolve
         server = StdioServerParameters(command=sys.executable,
-                                       args=["-m", "trial_validation.mcp_server"],
+                                       args=["-m", "clinical_trial_validation.mcp_server"],
                                        cwd=str(Path(__file__).resolve().parent.parent))
         read, write = await self.stack.enter_async_context(stdio_client(server))
         self.session = await self.stack.enter_async_context(ClientSession(read, write))

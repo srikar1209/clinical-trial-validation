@@ -1,17 +1,24 @@
 """
-Clinical trial data validation app.   Run:  streamlit run app.py
+Clinical trial data validation app.
+
+Run from the repo root:   streamlit run ui/app.py
+Needs trial.db first:     python -m clinical_trial_validation.run_all
 ALL DATA IS SYNTHETIC.
 """
 import json
 import sqlite3
+import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from trial_validation.audit_log import AuditLog, verify
-from trial_validation.config import DB, Z_THRESHOLD
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))   # repo root, so the package imports
+
+from clinical_trial_validation.audit_log import AuditLog, verify
+from clinical_trial_validation.config import DB, Z_THRESHOLD
 
 st.set_page_config(page_title="Trial Data Validation", layout="wide")
 

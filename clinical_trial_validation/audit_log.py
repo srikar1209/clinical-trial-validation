@@ -19,7 +19,7 @@ import os
 import sqlite3
 from datetime import datetime, timezone
 
-from .config import DB, RULE_VERSION
+from clinical_trial_validation.config import DB, RULE_VERSION
 
 GENESIS = "0" * 64   # "previous hash" for the very first entry
 

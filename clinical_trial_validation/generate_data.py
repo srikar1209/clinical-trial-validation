@@ -1,5 +1,5 @@
 """
-Step 1: Make 5,000 synthetic clinical trial records.  ALL DATA IS MADE UP.
+Data: Make 5,000 synthetic clinical trial records.  ALL DATA IS MADE UP.
 
 One record = one patient visit. Some visits have an adverse event (AE).
 
@@ -12,7 +12,7 @@ Planted problems (so our checks have something to find):
   - Real outliers: very high liver enzyme (ALT) in a few patients
   - One site (SITE-04) with many more high ALT values (a real safety signal)
 
-Run: python -m trial_validation.pipeline.step1_generate_data
+Run: python -m clinical_trial_validation.generate_data
 """
 import random
 from datetime import date, timedelta
@@ -20,7 +20,7 @@ from datetime import date, timedelta
 import numpy as np
 import pandas as pd
 
-from ..config import DATA, RECORDS_CSV
+from clinical_trial_validation.config import DATA, RECORDS_CSV
 
 random.seed(42)
 rng = np.random.default_rng(42)

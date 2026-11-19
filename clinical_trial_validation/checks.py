@@ -10,7 +10,7 @@ A record here is a plain dict (JSON-friendly): missing values are None.
 """
 from datetime import date
 
-from .config import ALLOWED_ARMS, HIGH_SEVERITY_GRADE, PLAUSIBLE, REQUIRED_FIELDS, Z_THRESHOLD, ZSCORE_COLUMNS
+from clinical_trial_validation.config import ALLOWED_ARMS, HIGH_SEVERITY_GRADE, PLAUSIBLE, REQUIRED_FIELDS, Z_THRESHOLD, ZSCORE_COLUMNS
 
 
 def missing(v):
